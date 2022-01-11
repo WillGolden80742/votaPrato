@@ -1,0 +1,26 @@
+<div id="<%= dom_id qualificacao%>" >
+  <p>
+    <% if qualificacao.cliente != nil %>
+    <strong>Cliente:</strong>
+    <%= qualificacao.cliente.nome %>
+    <% end %>
+  </p>
+
+  <p>
+    <% if qualificacao.restaurante != nil %>
+    <strong>Comentário:</strong>
+    <%= qualificacao.comentario %>
+    <% end %>
+  </p>
+
+  <p>
+    <div class="star" id="star<%= Integer(qualificacao.nota) %>" ></div> 
+  </p>
+ 
+
+  <p>
+    <strong>Valor gasto:</strong>
+    <%= qualificacao.valor_gasto %>
+  </p>
+
+</div>

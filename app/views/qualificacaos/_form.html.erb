@@ -1,0 +1,61 @@
+<%= form_with(model: qualificacao) do |form| %>
+  <% if @qualificacao.restaurante %>
+    <% if qualificacao.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(qualificacao.errors.count, "error") %> prohibited this qualificacao from being saved:</h2>
+
+        <ul>
+          <% qualificacao.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <% if @qualificacao.cliente %>
+      <%= form.hidden_field 'cliente_id' %>
+      <% else %>
+      <p><%= form.label :cliente_id %><br />
+      <%= form.collection_select(:cliente_id, @clientes, :id, :nome, :prompt => true) %></p>
+      <% end %>
+    </div>
+
+
+    <div class="field">
+      <% if @qualificacao.restaurante %>
+      <%= form.hidden_field 'restaurante_id' %>
+      <% else %>
+      <p><%= form.label :restaurante_id %><br />
+      <%= form.collection_select(:restaurante_id, @restaurantes, :id, :nome, :prompt => true) %></p>
+      <% end %>
+    </div>
+
+    <div class="field">
+        <p><%= form.label :prato_id %><br />
+        <%= form.collection_select(:prato_id, @qualificacao.restaurante.pratos, :id, :nome, :prompt => true) %></p>
+    </div>   
+
+
+    <div>
+      <%= form.label :comentario, style: "display: block" %>
+      <%= form.text_area :comentario %>
+    </div>
+
+    <div>
+      <%= form.label :nota, style: "display: block" %>
+      <%= form.text_field :nota %>
+    </div>
+
+    <div>
+      <%= form.label :valor_gasto, style: "display: block" %>
+      <%= form.text_field :valor_gasto %>
+    </div>
+
+    <div  onclick="checkQualificacaos()">
+      <%= form.submit %>
+    </div>
+  <% else %>  
+    <h2 style="color:red;">Acesse a partir de um restaurante</h2>
+  <% end %>  
+<% end %>

@@ -1,0 +1,24 @@
+<div id="<%= dom_id restaurante %>">
+  <p>
+    <strong>Nome:<br></strong>
+    <%= truncate(restaurante.nome, :length => 18) %>
+  </p>
+
+  <p>
+    <strong>Endereco:<br></strong>
+    <%= truncate(restaurante.endereco, :length => 18) %>
+  </p>
+
+  <p>
+    <strong>Especialidade:<br></strong>
+    <%= truncate(restaurante.especialidade, :length => 12) %>
+  </p>
+  <% if restaurante.qualificacaos.average(:nota) != nil %>
+        <div class="star" id="star<%= Integer(restaurante.qualificacaos.average(:nota)) %>" ></div>  
+        <span style="font-size:12px;">Nota : <%= '%.1f'%restaurante.qualificacaos.average(:nota) %></span> 
+  <% else %>
+    <div class="star" id="star0" ></div>  
+    <span style="font-size:12px;">0 avaliações</span>
+  <% end %>
+  <span>    
+</div>

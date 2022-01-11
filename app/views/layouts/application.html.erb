@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VotaPrato</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      function initAutocomplete() {
+         new google.maps.places.Autocomplete(
+                (document.getElementById('autocomplete')),
+                {types: ['geocode']}
+         );
+      }
+      function checkQualificacaos () {
+       
+      }      
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8WDSzEWezkjhmqMS6rMrhv4_qP99yjls&libraries=places&callback=initAutocomplete" async defer></script>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>   
+  </head>
+
+  <body>
+    <div style="padding-left:5%;padding-right:2%;">
+    <%= yield %>
+    </div>
+  </body>
+</html>

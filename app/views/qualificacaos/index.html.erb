@@ -1,0 +1,46 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Qualificacaos</h1>
+
+  <% @qualificacaos.each do |qualificacao| %>
+      <%= link_to qualificacao do %>
+        <div class="qualificacaos">
+        <div id="<%= dom_id qualificacao%>" >
+          <p>
+            <% if qualificacao.cliente != nil %>
+            <strong>Cliente:</strong>
+            <%= qualificacao.cliente.nome %>
+            <% end %>
+          </p>
+          <p>
+            <% if qualificacao.restaurante != nil %>
+            <strong>Restaurante:</strong>
+            <%= truncate(qualificacao.restaurante.nome, :length => 18) %>
+            <% end %>
+          </p> 
+          <p>
+            <strong>Comentário:</strong>
+            <%= truncate(qualificacao.comentario, :length => 18) %>
+          </p>
+
+          <p>
+            <div class="star" id="star<%= Integer(qualificacao.nota) %>" ></div> 
+          </p>
+         
+
+          <p>
+            <strong>Valor gasto:</strong>
+            <%= qualificacao.valor_gasto %>
+          </p>
+
+        </div>
+          <p>
+
+          </p>
+        </div>
+      <% end %>
+  <% end %>
+  
+<h1 class="new">
+<%= link_to "Restaurante", restaurantes_path %>
+</h1>

@@ -1,0 +1,31 @@
+<%= form_with(model: prato) do |form| %>
+  <% if prato.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(prato.errors.count, "error") %> prohibited this prato from being saved:</h2>
+
+      <ul>
+        <% prato.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% if @prato.restaurante %>
+    <%= form.hidden_field 'restaurante_id' %>
+    <% else %>
+    <p><%= form.label :restaurante_id %><br />
+    <%= form.collection_select(:restaurante_id, @restaurantes, :id, :nome, :prompt => true) %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

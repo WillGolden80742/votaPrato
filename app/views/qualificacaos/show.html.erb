@@ -1,0 +1,16 @@
+<h1>Qualificacao</h1>
+
+<div class="qualificacaos">
+
+  <%= link_to edit_qualificacao_path(@qualificacao) do %>
+<%= render @qualificacao %>
+<% end %>
+<div>
+
+  <%= button_to "Destroy this qualificacao", @qualificacao, method: :delete %>
+</div>
+  <p style="color: green"><%= notice %></p> 
+</div>
+  <h1 class="new">
+   <%= link_to "Voltar", restaurantes_path %>
+  <h1>

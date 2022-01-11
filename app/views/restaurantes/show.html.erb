@@ -1,0 +1,29 @@
+<h1>Restaurante</h1>
+
+<div class="restaurantes">
+
+  <%= link_to edit_restaurante_path(@restaurante) do %>
+          <%= render @restaurante %>
+
+            <p>Preço médio: </p>
+            <p><%= @restaurante.qualificacaos.average(:valor_gasto) %></p> 
+       <%= link_to "Qualificar este restaurante", controller: "qualificacaos", action: "new", cliente: 1, restaurante: @restaurante %> 
+           <br><br>
+  <% end %>          
+      <%= button_to "Deletar", @restaurante, method: :delete  %>   
+      <p style="color: green"><%= notice %></p>          
+</div> 
+
+    <h3>&nbsp&nbspAvaliações </h3>
+    <div class="qualificacaos_container">
+      <% @qualificacaos.each do |qualificacao| %>
+        <%= link_to qualificacao do %>
+          <div id="qualificacaos" class="qualificacaos">
+          <%= render qualificacao %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <h1 class="new">
+      <%= link_to "Voltar", restaurantes_path %>
+    </h1 >
