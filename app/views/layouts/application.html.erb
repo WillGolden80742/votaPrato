@@ -25,6 +25,9 @@
 
   <body>
     <div style="padding-left:5%;padding-right:2%;">
+    <div class="header">  
+      <p><%= link_to "Login", new_session_path %>  <%= link_to "Sing Up", new_cliente_path %></p> 
+    </div> 
     <%= yield %>
     </div>
   </body>

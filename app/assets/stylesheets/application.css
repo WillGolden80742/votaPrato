@@ -13,7 +13,7 @@
 }
 
 .restaurantes p , .qualificacaos p {
-    font-size:12px;
+    font-size:16px;
 }
 
 .qualificacaos_container {  
@@ -26,7 +26,21 @@
 }
 
 .index {
-    height: 155px;    
+    height: 210px;    
+}
+
+.header {
+    border: 3px solid #3e3661;
+    width: 90%;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.new {
+    background-color:auto;
+    position: absolute;
+    right: 10%;
+    top:80px;
 }
 
 input[type=submit], button{
@@ -50,12 +64,7 @@ input, textarea, select {
     padding:5px;       
     background: none;
 }
-.new {
-    background-color:auto;
-    position: absolute;
-    right: 10%;
-    top:0px;
-}
+
 a {
     text-decoration: auto;
     color:grey;

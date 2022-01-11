@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :sessions
   resources :qualificacaos
   resources :clientes
   resources :restaurantes
+  resources :pratos  
   root 'restaurantes#index'
 
   get 'restaurantes/avaliar', to: "restaurantes#avaliar"
