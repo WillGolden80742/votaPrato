@@ -153,11 +153,8 @@ GEM
       activesupport (= 7.0.1)
       bundler (>= 1.15.0)
       railties (= 7.0.1)
-    rails-dom-testing (2.0.3)
-      activesupport (>= 4.2.0)
-      nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
-      loofah (~> 2.3)
+      rails-dom-testing (2.0.3)
+      rails-html-sanitizer (1.4.2)
     railties (7.0.1)
       actionpack (= 7.0.1)
       activesupport (= 7.0.1)
@@ -208,10 +205,8 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.5.3)
-
 PLATFORMS
   x86_64-linux
-
 DEPENDENCIES
   bootsnap
   capybara
@@ -228,9 +223,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
-
 RUBY VERSION
-   ruby 2.7.4p191
-
+  ruby 2.7.4p191
 BUNDLED WITH
-   2.3.4
+  2.3.4
